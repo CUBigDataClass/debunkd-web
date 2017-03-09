@@ -1,0 +1,54 @@
+
+
+body {
+  padding-top: 70px;
+  font: 20px Montserrat, sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+  position: relative;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: 16px;
+}
+p {
+  font-size: 16px;
+}
+.margin {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 5px;
+}
+.bg1 {
+  /* Blue */
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2a2a2a , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.navbar-elements{
+  padding: 9px 9px 9px 9px;
+}
+.navbar-default {
+  font-size: 16px;
+  letter-spacing: 1px;
+  /*background-color: #777;*/
+  /*background-image: none;*/
+  border: none;
+}
+/*highlight on hover color */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  /*background-color: #03a465;*/
+  color: #0084b4;
+}
+.small-block {
+  background-color: #ffffff;
+  color: #000000;
+}
+/*a:hover, a:active {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
+}*/
+strong{
+  color: #FFF;
+}
