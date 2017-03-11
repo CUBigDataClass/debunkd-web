@@ -1,17 +1,20 @@
 
-
 body {
   padding-top: 70px;
   font: 20px Montserrat, sans-serif;
   line-height: 1.8;
-  color: #f5f6f7;
   position: relative;
+  background-image:
 }
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: 16px;
 }
 p {
   font-size: 16px;
+}
+
+.light-text {
+  color: white;
 }
 .margin {
   margin-top: 16px;
@@ -29,6 +32,7 @@ p {
   padding: 9px 9px 9px 9px;
 }
 .navbar-default {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
   font-size: 16px;
   letter-spacing: 1px;
   /*background-color: #777;*/
@@ -44,11 +48,22 @@ p {
   background-color: #ffffff;
   color: #000000;
 }
-/*a:hover, a:active {
-  color: #ffffff;
-  font-weight: 400;
-  text-decoration: none;
-}*/
-strong{
-  color: #FFF;
+
+input[type=text] {
+    width: 400px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: white;
+    background-image: url('search-icon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 410px;
 }
