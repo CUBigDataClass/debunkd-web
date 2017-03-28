@@ -57,11 +57,12 @@ input[type=text] {
   font-size: 18px;
   background-color: white;
   background-image: url('search-icon.png');
-  background-position: 10px 10px;
+  background-position: 10px 12px;
+  background-size: 30px;
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.3s ease-in-out;
+  padding: 12px 20px 12px 50px;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
 }
 
 input[type=text]:focus {
@@ -74,4 +75,3 @@ input[type=text]:focus {
   height: 400px;
   margin: 1em auto;
 }
-
