@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SwashBucklers</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+
+  <body class="bg1">
+
+    <!-- Banner -->
+    <!--
+    <div class="container">
+      <div class="row">
+        <h1> ERMEHGERD </h1>
+      </div>
+    </div>
+    -->
+
+    <!-- Navbar -->
+    <nav class="navbar-default navbar-inverse navbar-fixed-top" data-spy="affix" data-offset-top="0">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <div>
+            <a href="/">
+              <img src="{{url_for('static', filename='smiley.png')}}" class="img-responsive margin" style="display:inline" alt="icon" width="40">
+            </a>
+          </div>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul id="nav" class="nav navbar-nav navbar-left navbar-elements">
+          <li><a href="#1">MAP</a></li>
+          <li><a href="#2">STATISTICS</a></li>
+          <li><a href="/about">ABOUT US</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- <h1 align="center"> Perhaps logo here? </h1> -->
+    <br />
+    <form align="center" action="{{ url_for('search') }}" method="Post">
+      <input type="text" name="search" placeholder="Topic..." value="{{query}}">
+      <br /> <br />
+      <input type="submit" name="zeform" value="Search Fake News">
+    </form>
+    <div class="puthere"> </div>
+  </body>
+
+</html>
