@@ -1,1 +1,2 @@
 flask==0.12
+Flask-Twitter-OEmbedder==0.1.8
