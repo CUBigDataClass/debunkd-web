@@ -20,4 +20,14 @@ as a daemon, drop the `--rm` flag and daemonize using `-d`.
 
 #### Development
 
-This section is unfinished.
+For the time being, development for the container can be done by mounting the
+application within the container, overwriting the standard mount point where
+files are placed when the production container is built. This can be done with
+the following:
+
+    docker run --rm -it -v "$PWD"/app:/app -p 80:80 sb-web
+
+If you already have a container named `sb-web`, you will have to remove it. That
+is achievable using `docker rm sb-web`. To view the logs of a container, use
+`docker logs sb-web`. To view the logs live, use `docker logs -f sb-web`.
+Otherwise, don't start the container as a daemon.
