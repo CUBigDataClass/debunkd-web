@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve myproject
+After=network.target
+
+[Service]
+User=user
+Group=www-data
+WorkingDirectory=/home/user/sb-web/html
+Environment="PATH=/home/user/sb-web/html/sbenv/bin"
+ExecStart=/home/user/sb-web/html/sbenv/bin/uwsgi --ini sb-web.ini
+
+[Install]
+WantedBy=multi-user.target
