@@ -1,3 +1,3 @@
-FROM nginx:1.11.10-alpine
+FROM tiangolo/uwsgi-nginx-flask:latest
 
-COPY html /usr/share/nginx/html
+COPY ./app /app
