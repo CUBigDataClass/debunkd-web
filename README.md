@@ -1,4 +1,4 @@
-### sb-web
+### sb-web [![Build Status](https://travis-ci.com/CUBigDataClass/sb-web.svg?token=to3Uk4kQPXFNMbsHvZRp&branch=master)](https://travis-ci.com/CUBigDataClass/sb-web)
 
 This repository contains the web front-end component of the team Swashbuckler's
 big data application, written to fulfill requirements of the ATLS 4214/5214 term
