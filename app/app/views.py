@@ -1,18 +1,30 @@
 from flask import Flask, request, render_template, url_for, redirect
 from . import app
 
-@app.route('/', methods=['get'])
+@app.route('/', methods=['GET'])
 def index():
     if request.method == 'GET':
         return render_template('index.html')
 
-@app.route('/about', methods=['get'])
+@app.route('/about', methods=['GET'])
 def about():
     if request.method == 'GET':
         return render_template('about.html')
 
-@app.route('/search', methods=['post'])
+@app.route('/search', methods=['GET','POST'])
 def search():
-    query = request.form['search']
-    print("Text in search box: '", query, "'")
-    return redirect('/')
+    if request.method == 'POST':
+        query = request.form['search']
+        url = '/search/' + query
+        print(url)
+        if query:
+            # return redirect(url)
+            return render_template('adindex.html', query=query)
+        else:
+            return redirect('/')
+    else:
+        return redirect('/')
+
+@app.route('/search/<something>')
+def another():
+    return something
