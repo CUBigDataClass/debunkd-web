@@ -4,13 +4,20 @@ body {
   font: 20px Montserrat, sans-serif;
   line-height: 1.8;
   position: relative;
-  background-image:
 }
 h1,h2,h3,h4,h5,h6 {
   margin-bottom: 16px;
 }
 p {
   font-size: 16px;
+}
+
+.contable {
+    color: white;
+}
+
+.table {
+    color: white;
 }
 
 .light-text {
@@ -23,10 +30,17 @@ p {
   margin-right: 5px;
 }
 .bg1 {
-  /* Blue */
+  /* Grey */
   background: #00d2ff; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #2a2a2a , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg2 {
+    /* Blue */
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #214857 , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+  background: rgb(0, 132, 180, 0.5);
 }
 .navbar-elements{
   padding: 9px 9px 9px 9px;

@@ -57,9 +57,9 @@
     </form>
 
 
-    <div class="container">
-      <h2>Basic Table</h2>
-      <p>The .table class adds basic styling (light padding and only horizontal dividers) to a tablet:</p>
+    <div class="container bg2">
+      <h2>Related tweets</h2>
+      <p>Click on one of the tweets to see something</p>
       <table class="table">
         <thead>
           <tr>
@@ -69,7 +69,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <!-- <tr>
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
@@ -83,15 +83,19 @@
             <td>July</td>
             <td>Dooley</td>
             <td>july@example.com</td>
+          </tr> -->
+          {% for word in query.split(' ') %}
+          <tr>
+            <td>{{word}}</td>
+            <td>10000</td>
+            <td>{{word*2}}</td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
-
-
-    {% for word in query.split(' ') %}
-    <h2 align="center"> {{word}} <h2>
-    {% endfor %}
+    
+    <br />
     <div class="puthere"> </div>
   </body>
 
