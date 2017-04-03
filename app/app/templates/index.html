@@ -11,6 +11,7 @@
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
   </head>
 
   <body class="bg1">
@@ -47,11 +48,14 @@
       </div>
     </nav>
     <h1 align="center"> Perhaps logo here? </h1>
+
+    <!-- Search box -->
     <form align="center" action="{{ url_for('search') }}" method="Post">
-      <input type="text" name="search" placeholder="Topic...">
+      <input type="text" name="search" id="search" placeholder="Topic...">
       <br /> <br />
-      <input type="submit" name="my-form" value="Search Fake News">
+      <input type="submit" class="btn btn-primary btn-xlarge" name="searchbutt" id="searchbutt" value="Search Fake News">
     </form>
+    
     <div class="puthere"> </div>
 
   </body>
