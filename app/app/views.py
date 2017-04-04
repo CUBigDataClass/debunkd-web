@@ -25,6 +25,9 @@ def search():
     else:
         return redirect('/')
 
-@app.route('/search/<something>')
-def another():
-    return something
+@app.route('/map', methods=['GET', 'POST'])
+def map():
+    if request.method == 'POST':
+        pass
+    else:
+        return render_template('mapsearch.html')

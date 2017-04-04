@@ -41,7 +41,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul id="nav" class="nav navbar-nav navbar-left navbar-elements">
-          <li><a href="#1">MAP</a></li>
+          <li><a href="/map">MAP</a></li>
           <li><a href="#2">STATISTICS</a></li>
           <li><a href="/about">ABOUT US</a></li>
         </ul>
@@ -50,12 +50,15 @@
     <h1 align="center"> Perhaps logo here? </h1>
 
     <!-- Search box -->
-    <form align="center" action="{{ url_for('search') }}" method="Post">
-      <input type="text" name="search" id="search" placeholder="Topic...">
-      <br /> <br />
-      <input type="submit" class="btn btn-primary btn-xlarge" name="searchbutt" id="searchbutt" value="Search Fake News">
-    </form>
-    
+    <div class="search-form">
+      <form align="center" action="{{ url_for('search') }}" method="Post">
+        <input type="text" name="search" id="search" placeholder="Topic...">
+        <br /> <br />
+        <input type="submit" class="btn btn-primary btn-xlarge" name="searchbutt" id="searchbutt" value="Search Fake News">
+      </form>
+    </div>
+
+
     <div class="puthere"> </div>
 
   </body>
