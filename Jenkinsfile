@@ -5,6 +5,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh 'pwd'
             }
         }
     }
