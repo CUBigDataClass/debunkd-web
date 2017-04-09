@@ -1,6 +1,6 @@
 
 body {
-  padding-top: 70px;
+  padding-top: 55px;
   font: 20px Montserrat, sans-serif;
   line-height: 1.8;
   position: relative;
@@ -24,8 +24,11 @@ td > a:hover {
 }
 
 .main-logo {
+    padding-top: 30px;
     display: block;
     margin: auto;
+    height: auto;
+    width: 600px;
 }
 
 .contable {
@@ -57,7 +60,7 @@ td > a:hover {
 }
 
 .margin {
-  margin-top: 16px;
+  margin-top: 7px;
   margin-bottom: 16px;
   margin-left: 16px;
   margin-right: 5px;
@@ -65,9 +68,9 @@ td > a:hover {
 
 .bg1 {
   /* Grey */
-  background: #00d2ff; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2a2a2a , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #2c3547; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */*/
+  /*background: linear-gradient(to right, #142e54 , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */*/
 }
 
 .bg2 {
@@ -79,14 +82,25 @@ td > a:hover {
 }
 
 .navbar-elements{
-  padding: 9px 9px 9px 9px;
+  padding: 10px 9px 9px 9px;
+  color: #ffdfc1;
+}
+
+.navbar-nav > li > a {
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+}
+
+.navbar {
+  min-height:32px !important
 }
 
 .navbar-default {
+  height: 55px;
   box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2);
   font-size: 16px;
-  letter-spacing: 1px;
-  /*background-color: #777;*/
+  letter-spacing: 0px;
+  background-color: #3c4b6a;
   /*background-image: none;*/
   border: none;
 }
@@ -96,6 +110,11 @@ td > a:hover {
   /*background-color: #03a465;*/
   color: #0084b4;
 }
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffdfc1;
+}
+
 .small-block {
   background-color: #ffffff;
   color: #000000;
@@ -107,7 +126,7 @@ input[type=text], textarea {
   box-shadow: none !important;
   outline: none !important;
   border-radius: 8px;
-  font-size: 17px;
+  font-size: 15px;
   background-color: white;
   background-image: url('search-icon.png');
   background-position: 10px 12px;
