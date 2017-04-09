@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon.ico')}}">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
@@ -36,15 +37,15 @@
 
         <div>
           <a href="/">
-            <img src="{{url_for('static', filename='sb_logoxs.png')}}" class="img-responsive margin" style="display:inline" alt="icon" width="120">
+            <img src="{{url_for('static', filename='sb_logoxs.png')}}" class="img-responsive margin" style="display:inline" alt="icon" width="118">
           </a>
         </div>
 
       </div>
 
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul id="nav" class="nav navbar-nav navbar-left navbar-elements">
-          <li><a href="/map">MAP</a></li>
+        <ul id="nav" class="nav navbar-nav navbar-right navbar-elements">
+          <li><a href="/map"><strong>MAP</strong></a></li>
           <li><a href="#2">STATISTICS</a></li>
           <li><a href="/about">ABOUT US</a></li>
         </ul>
@@ -54,10 +55,15 @@
 
     <!-- Logo -->
     <img src="{{url_for('static', filename='sb_logo2.png')}}" class="main-logo" align="center">
+
+    <div class="container search-note" align="center">
+      <p><i>Debunkd is a tool designed to help you identify tweets associated with false news topics and visualize it's spread and influence</i></p>
+    </div>
+
     <!-- Search box -->
     <div class="search-form">
       <form align="center" action="{{ url_for('search') }}" method="Post">
-        <input type="text" name="search" id="search" placeholder="Topic...">
+        <input type="text" name="search" id="search" placeholder="Debunk topic...">
         <br /> <br />
         <input type="submit" class="btn btn-primary btn-large" name="searchbutt" id="searchbutt" value="Search Fake News">
       </form>

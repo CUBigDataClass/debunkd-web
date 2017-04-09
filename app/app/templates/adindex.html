@@ -11,6 +11,8 @@
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon.ico')}}">
+
   </head>
 
   <body class="bg1">
@@ -35,14 +37,14 @@
 
         <div>
           <a href="/">
-            <img src="{{url_for('static', filename='sb_logoxs.png')}}" class="img-responsive margin" style="display:inline" alt="icon" width="120">
+            <img src="{{url_for('static', filename='sb_logoxs.png')}}" class="img-responsive margin" style="display:inline" alt="icon" width="118">
           </a>
         </div>
 
       </div>
 
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul id="nav" class="nav navbar-nav navbar-left navbar-elements">
+        <ul id="nav" class="nav navbar-nav navbar-right navbar-elements">
           <li><a href="/map">MAP</a></li>
           <li><a href="#2">STATISTICS</a></li>
           <li><a href="/about">ABOUT US</a></li>
@@ -53,17 +55,18 @@
 
     <!-- Search box -->
     <br />
+    <div class="search form">
     <form align="center" id="search" action="{{ url_for('search') }}" method="Post">
       <input type="text" name="search" placeholder="Topic..." value="{{query}}">
       <br /> <br />
-      <!-- <input type="submit" name="zeform" value="Search Fake News"> -->
+    </div>
     </form>
 
 
     <div class="container bg2">
       <h2>Related tweets</h2>
       <p>Click on one of the tweets to see something</p>
-      <table class="table">
+      <table class="table table-borderless container">
         <thead>
           <tr>
             <th>Tweet</th>
