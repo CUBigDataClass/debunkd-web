@@ -47,8 +47,9 @@
         </ul>
       </div>
     </nav>
-    <h1 align="center"> Perhaps logo here? </h1>
 
+    <!-- Logo -->
+    <img src="{{url_for('static', filename='sb_logo.png')}}" class="main-logo" align="center">
     <!-- Search box -->
     <div class="search-form">
       <form align="center" action="{{ url_for('search') }}" method="Post">
