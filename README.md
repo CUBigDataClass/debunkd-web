@@ -8,7 +8,7 @@ deployed using WSGI for scaling in production.
 #### Running the Application
 
 To run this application, you must have Docker installed, and the daemon must be
-running. A script has been supplied with this repository to build the container,
+running. A script has been supplied with this repository to build the image,
 which can be accessed with `./build`. The default name for the image that is
 generated is `sb-web`. The container can then be launched on a local port using
 the following:
