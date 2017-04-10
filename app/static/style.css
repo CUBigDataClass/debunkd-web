@@ -1,10 +1,13 @@
 
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   padding-top: 55px;
-  font: 20px Montserrat, sans-serif;
-  line-height: 1.8;
+  font: 12px Montserrat, sans-serif;
+  line-height: 1.6;
   color: white;
-  position: relative;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -19,7 +22,11 @@ p {
 .table-borderless > tfoot > tr > td,
 .table-borderless > tfoot > tr > th,
 .table-borderless > thead > tr > td {
-    border: none;
+  border: none;
+}
+
+.table-borderless > thead > tr {
+  background-color: #2b6ba2;
 }
 
 /* For clickable elements in our table */
@@ -40,7 +47,6 @@ tr:nth-child(even) {
   padding-top: 30px;
   display: block;
   margin: auto;
-  height: auto;
   width: 600px;
 }
 
@@ -64,10 +70,8 @@ tr:nth-child(even) {
   font: 12px;
   color: #ffe0c1;
   width: 60%;
-}
-
-.table {
-  color: white;
+  /*min-width: 600px;*/
+  max-width: 1000px;
 }
 
 .margin {
@@ -80,16 +84,16 @@ tr:nth-child(even) {
 .bg1 {
   /* Grey */
   background: #2c3547; /* fallback for old browsers */
-  /*background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */*/
-  /*background: linear-gradient(to right, #142e54 , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */*/
 }
 
 .bg2 {
-    /* Blue */
+  /* Blue */
   background: #337bb8; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #00d2ff , #3a7bd5); /* Chrome 10-25, Safari 5.1-6 */
-  /*background: linear-gradient(to right, #214857 , #626262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
-  background: rgb(0, 132, 180);
+  margin-bottom: 50px;
+}
+
+.navbar-links {
+  padding-right: 10px;
 }
 
 .navbar-elements{
@@ -149,17 +153,22 @@ input[type=text], textarea {
   transition: width 0.2s ease-in-out;*/
 }
 
-#footer {
-  clear: both;
-  position: relative;
-  z-index: 10;
-  height: 3em;
-  margin-top: -3em;
+#wrapper {
+  min-height: 100%;
+  height: auto;
+  margin-bottom: -50px;
+  margin:   0px auto;
+  padding:  0px auto;
+  min-width: 600px;
 }
 
-#acontainer {
-  min-width: 300px;
-  max-width: 800px;
-  height: 400px;
-  margin: 1em auto;
+.footer {
+  height: 50px;
+  margin-top: -80px;
+  line-height: 1;
+  font: 8px !important;
+}
+
+hr {
+  border-color: #494949;
 }
