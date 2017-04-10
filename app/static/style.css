@@ -50,19 +50,15 @@ tr:nth-child(even) {
   width: 600px;
 }
 
-.btn-xlarge {
-  padding: 10px 10px;
-  font-size: 17px;
-}
-
 .search-form {
-  padding-top: 20px;
+  padding-top: 10px;
   position: relative;
   /* center the element */
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
+  /*padding-bottom: 80px;*/
   width: 60%;
 }
 
@@ -89,7 +85,6 @@ tr:nth-child(even) {
 .bg2 {
   /* Blue */
   background: #337bb8; /* fallback for old browsers */
-  margin-bottom: 50px;
 }
 
 .navbar-links {
@@ -164,7 +159,7 @@ input[type=text], textarea {
 
 .footer {
   height: 50px;
-  margin-top: -80px;
+  margin-top: -70px;
   line-height: 1;
   font: 8px !important;
 }

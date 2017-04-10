@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, url_for, redirect
-from . import app
+from app import app
+from app.classes import Query
 
 @app.route('/', methods=['GET'])
 def index():
@@ -14,12 +15,12 @@ def about():
 @app.route('/search', methods=['GET','POST'])
 def search():
     if request.method == 'POST':
-        query = request.form['search']
-        url = '/search/' + query
-        print(url)
-        if query:
+        uquery = Query()
+        uquery.query = request.form['search']
+        uquery.query_results = "Query results of: "
+        if uquery.query:
             # return redirect(url)
-            return render_template('adindex.html', query=query)
+            return render_template('adindex.html', uquery=uquery)
         else:
             return redirect('/')
     else:
