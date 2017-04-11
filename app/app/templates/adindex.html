@@ -8,10 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon.ico')}}">
+
+
 
   </head>
 
@@ -48,20 +51,21 @@
 
       <!-- Search box -->
       <br />
-      <div class="container">
-        <div class="search form">
-        <form align="center" id="search" action="{{ url_for('search') }}" method="Post">
+      <br />
+      <div class="container input-group">
+        <form id="search" class="input-group" action="{{ url_for('search') }}" method="Post">
           <input type="text" name="search" placeholder="Topic..." value="{{uquery.query}}">
-          <br /> <br />
-        </div>
+          <input type="submit" class="btn btn-primary btn-large btn-sline" name="searchbutt" id="searchbutt" value="Search Fake News">
+        </form>
+        <br />
+
       </div>
-      </form>
 
 
-      <div class="container bg2">
+      <div class="container bg2" style="overflow-x:auto;">
         <h2>Tweets related to: <a href="#"><u>{{uquery.query}}</u></a></h2>
-        <p>Click on one of the tweets to see something</p>
-        <table class="table table-borderless container">
+        <p>List of all tweets relating to search topic</p>
+        <table id="mytable" class="table table-borderless container">
           <thead>
             <tr>
               <th>Tweet</th>
@@ -74,24 +78,36 @@
             <tr>
               <td>{{word}}</td>
               <td>10000</td>
-              <td>{{uquery.query_results + uquery.query}}</td>
+              <td>{{(word + ' ' + word + ' ')*10}}</td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
       </div>
 
-    <br />
 
-  </div>
+      <script>
+      $(document).ready(function() {
+          $('#mytable').DataTable( {
+              searching: false,
+              scrollY: "200px",
+              aaSorting: []
+              // scrollCollapse: true
+          });
+      });
+      </script>
 
-  <!-- Footer -->
-  <div class="footer text-muted">
-    <hr width="550px" align="center">
-    <div class="container" align="center">
-       All material about Twitter belongs to <a href="https://twitter.com/">Twitter, Inc. </a>
+      <br />
+
     </div>
-  </div>
+
+    <!-- Footer -->
+    <div class="footer text-muted">
+      <hr width="550px" align="center">
+      <div class="container" align="center">
+         All material about Twitter belongs to <a href="https://twitter.com/">Twitter, Inc. </a>
+      </div>
+    </div>
 
   </body>
 
