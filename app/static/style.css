@@ -70,6 +70,14 @@ tr:nth-child(even) {
   max-width: 1000px;
 }
 
+.search-wrapper {
+  display: inline-block;
+}
+
+.btn-sline {
+  padding:8px 15px;
+}
+
 .margin {
   margin-top: 7px;
   margin-bottom: 16px;
@@ -85,6 +93,7 @@ tr:nth-child(even) {
 .bg2 {
   /* Blue */
   background: #337bb8; /* fallback for old browsers */
+  margin-bottom: 50px;
 }
 
 .navbar-links {
@@ -140,10 +149,10 @@ input[type=text], textarea {
   color: black;
   background-color: white;
   background-image: url('search-icon.png');
-  background-position: 10px 12px;
+  background-position: 4px 4px;
   background-size: 30px;
   background-repeat: no-repeat;
-  padding: 12px 20px 12px 50px;
+  padding: 6px 0px 8px 45px;
   /*-webkit-transition: width 0.2s ease-in-out;
   transition: width 0.2s ease-in-out;*/
 }
@@ -166,4 +175,9 @@ input[type=text], textarea {
 
 hr {
   border-color: #494949;
+}
+
+.dataTables_info,
+.dataTables_length {
+  color: black;
 }
