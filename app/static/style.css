@@ -34,6 +34,10 @@ td > a {
   color: white;
 }
 
+h2 > a {
+  color: white;
+}
+
 /* Hover for clickable elements in table */
 td > a:hover {
   color: red;
@@ -41,6 +45,10 @@ td > a:hover {
 
 tr:nth-child(even) {
     background-color: #2b6ba2;
+}
+
+.paginate_button {
+  color: white;
 }
 
 .main-logo {
@@ -93,7 +101,6 @@ tr:nth-child(even) {
 .bg2 {
   /* Blue */
   background: #337bb8; /* fallback for old browsers */
-  margin-bottom: 50px;
 }
 
 .navbar-links {
@@ -163,6 +170,7 @@ input[type=text], textarea {
   margin-bottom: -50px;
   margin:   0px auto;
   padding:  0px auto;
+  padding-bottom: 60px;
   min-width: 600px;
 }
 
@@ -180,4 +188,17 @@ hr {
 .dataTables_info,
 .dataTables_length {
   color: black;
+}
+
+#container {
+  padding-top: 50px;
+	height: 500px;
+	width: 700px;
+	margin: 0 auto;
+  margin-bottom: 10px;
+}
+.loading {
+	margin-top: 10em;
+	text-align: center;
+	color: gray;
 }
