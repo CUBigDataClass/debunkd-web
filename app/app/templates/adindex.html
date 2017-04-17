@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <script src="http://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
     <!-- fonts -->
@@ -40,7 +41,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
           <div class="navbar-links">
             <ul id="nav" class="nav navbar-nav navbar-right navbar-elements">
-              <li><a href="/map">MAP</a></li>
+              <!-- <li><a href="/map">MAP</a></li> -->
               <li><a href="#2">STATISTICS</a></li>
               <li><a href="/about">ABOUT US</a></li>
             </ul>
@@ -64,10 +65,67 @@
 
       <div class="container bg2" style="overflow-x:auto;">
         <!-- Heatmap -->
-        <div class="bg2" align="center">
-          <div id="container" class="container"></div>
+        <script>
+        var data = [
+          ['us-ma', 0],
+          ['us-wa', 1],
+          ['us-ca', 2],
+          ['us-or', 3],
+          ['us-wi', 4],
+          ['us-me', 5],
+          ['us-mi', 6],
+          ['us-nv', 7],
+          ['us-nm', 8],
+          ['us-co', 9],
+          ['us-wy', 10],
+          ['us-ks', 11],
+          ['us-ne', 12],
+          ['us-ok', 13],
+          ['us-mo', 14],
+          ['us-il', 15],
+          ['us-in', 16],
+          ['us-vt', 17],
+          ['us-ar', 104],
+          ['us-tx', 19],
+          ['us-ri', 20],
+          ['us-al', 21],
+          ['us-ms', 22],
+          ['us-nc', 12],
+          ['us-va', 24],
+          ['us-ia', 25],
+          ['us-md', 48],
+          ['us-de', 27],
+          ['us-pa', 28],
+          ['us-nj', 29],
+          ['us-ny', 30],
+          ['us-id', 31],
+          ['us-sd', 32],
+          ['us-ct', 33],
+          ['us-nh', 34],
+          ['us-ky', 35],
+          ['us-oh', 36],
+          ['us-tn', 37],
+          ['us-wv', 38],
+          ['us-dc', 39],
+          ['us-la', 40],
+          ['us-fl', 38],
+          ['us-ga', 42],
+          ['us-sc', 43],
+          ['us-mn', 44],
+          ['us-mt', 45],
+          ['us-nd', 46],
+          ['us-az', 47],
+          ['us-ut', 48],
+          ['us-hi', 49],
+          ['us-ak', 50],
+          ['undefined', 51]
+        ];
+        </script>
+        <div class="bg2">
+          <div id="container" class="container" align="center"></div>
         </div>
-        <script src="{{url_for('static',filename='us_heatmap.js')}}"></script>
+        <!-- <script src="{{url_for('static',filename='us_choropleth.js')}}"></script> -->
+        <script src="./static/us_choropleth.js?2"> </script>
 
         <h2>Tweets related to: <a href="#"><u>{{uquery.query}}</u></a></h2>
         <p>List of all tweets relating to search topic</p>

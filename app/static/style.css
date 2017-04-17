@@ -191,12 +191,15 @@ hr {
 }
 
 #container {
-  padding-top: 50px;
+  padding-top: 30px;
+  padding-right: 44px;
 	height: 500px;
-	width: 700px;
+  min-width: 500px;
+  max-width: 970px;
 	margin: 0 auto;
   margin-bottom: 10px;
 }
+
 .loading {
 	margin-top: 10em;
 	text-align: center;
