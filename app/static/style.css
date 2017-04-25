@@ -18,6 +18,9 @@ p {
   font-size: 16px;
 }
 
+table {
+  padding-bottom: 40px;
+}
 .table-borderless > tbody > tr > td,
 .table-borderless > tfoot > tr > td,
 .table-borderless > tfoot > tr > th,
@@ -191,13 +194,23 @@ hr {
   color: black;
 }
 
-#container {
+#cmap {
   padding-top: 30px;
-  padding-right: 44px;
+  padding-right: -10px;
 	height: 500px;
   min-width: 500px;
-  max-width: 970px;
+  max-width: 960px;
 	margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#other {
+  padding-top: 30px;
+  padding-right: -10px;
+  height: 500px;
+  min-width: 500px;
+  max-width: 960px;
+  margin: 0 ;
   margin-bottom: 10px;
 }
 
@@ -205,4 +218,21 @@ hr {
 	margin-top: 10em;
 	text-align: center;
 	color: gray;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
 }

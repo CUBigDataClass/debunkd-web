@@ -1,7 +1,7 @@
 
 
 // Create the chart
-Highcharts.mapChart('container', {
+Highcharts.mapChart('cmap', {
   chart: {
     map: 'countries/us/us-all',
     backgroundColor: '#337bb8',
@@ -46,7 +46,7 @@ Highcharts.mapChart('container', {
   },
 
   series: [{
-    data: data,
+    data: map_data,
     name: 'Tweet frequency',
     states: {
       hover: {

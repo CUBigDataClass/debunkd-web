@@ -11,6 +11,7 @@
     <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" href= "{{url_for('static',filename='style.css') }}">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="icon" type="image/png" href="{{url_for('static', filename='favicon.ico')}}">
@@ -63,65 +64,82 @@
       </div>
 
 
-      <div class="container bg2" style="overflow-x:auto;">
-        <!-- Heatmap -->
-        <script>
-          function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-          }
+      <div class="container">
 
-          var data = [
-            {% for state in uquery.states %}
-            ['us-{{state}}', getRandomInt(0, 5000)],
-            {% endfor %}
-          ];
+          <!-- Heatmap -->
+          <script>
+            function getRandomInt(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
 
-        </script>
-        <div class="bg2">
-          <div id="container" class="container" align="center"></div>
+            var map_data = [
+              {% for state in uquery.states %}
+              ['us-{{state}}', getRandomInt(0, 5000)],
+              {% endfor %}
+            ];
+
+          </script>
+
+          <!-- Map -->
+        <div id="exTab1">
+          <ul class="nav nav-pills">
+      			<li class="active">
+              <a href="#1a" data-toggle="tab">Map</a>
+      			</li>
+      			<li><a href="#2a" data-toggle="tab">Timechart</a>
+      			</li>
+      		</ul>
+
+          <div class="container bg2">
+      			<div class="tab-content clearfix">
+      			  <div class="tab-pane active" id="1a">
+                <div id="cmap" class="container" align="center"></div>
+                <script src="./static/us_choropleth.js?101"> </script>
+      				</div>
+      				<div class="tab-pane" id="2a">
+                <div id="other" align="center"></div>
+                <script src="./static/us_timechart.js?1"> </script>
+      				</div>
+      			</div>
+
+            <h2>Tweets related to: <a href="#"><u>{{uquery.query}}</u></a></h2>
+            <p>List of all tweets relating to search topic</p>
+            <table id="mytable" class="table table-borderless container">
+              <thead>
+                <tr>
+                  <th>Tweet</th>
+                  <th>Retweets</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for word in uquery.query.split(' ') %}
+                <tr>
+                  <td>{{word}}</td>
+                  <td>10000</td>
+                  <td>{{(word + ' ' + word + ' ')*10}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <!-- <script src="{{url_for('static',filename='us_choropleth.js')}}"></script> -->
-        <script src="./static/us_choropleth.js?81"> </script>
 
-        <h2>Tweets related to: <a href="#"><u>{{uquery.query}}</u></a></h2>
-        <p>List of all tweets relating to search topic</p>
-        <table id="mytable" class="table table-borderless container">
-          <thead>
-            <tr>
-              <th>Tweet</th>
-              <th>Retweets</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for word in uquery.query.split(' ') %}
-            <tr>
-              <td>{{word}}</td>
-              <td>10000</td>
-              <td>{{(word + ' ' + word + ' ')*10}}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+
+        <script>
+        $(document).ready(function() {
+            $('#mytable').DataTable( {
+                searching: false,
+                scrollY: "200px",
+                aaSorting: []
+                // scrollCollapse: true
+            });
+        });
+        </script>
+
+        <br />
       </div>
-
-
-      <script>
-      $(document).ready(function() {
-          $('#mytable').DataTable( {
-              searching: false,
-              scrollY: "200px",
-              aaSorting: []
-              // scrollCollapse: true
-          });
-      });
-      </script>
-
-      <br />
-
-
     </div>
-
 
 
     <!-- Footer -->
