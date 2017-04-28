@@ -199,22 +199,25 @@ hr {
   padding-top: 30px;
   padding-right: -10px;
 	height: 500px;
-  min-width: 500px;
-  max-width: 960px;
+  /*min-width: 500px;*/
+  width: auto;
 	margin: 0 auto;
   margin-bottom: 10px;
 }
 
-#other {
+#timechart {
   padding-top: 30px;
   padding-right: -10px;
-  height: 500px;
-  min-width: 500px;
-  max-width: 960px;
-  margin: 0 ;
+	height: 500px;
+  /*min-width: 500px;*/
+  width: auto;
+	margin: 0 auto;
   margin-bottom: 10px;
 }
 
+#desc {
+  width: 600px;
+}
 .loading {
 	margin-top: 10em;
 	text-align: center;

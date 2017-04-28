@@ -10,6 +10,9 @@ Highcharts.mapChart('cmap', {
         font: 'Montserrat'
     }
   },
+  credits: {
+    enabled: false
+  },
 
   title: {
     text: 'Corrupted states',

@@ -1,32 +1,94 @@
-Highcharts.chart('other', {
-  chart: {
-      type: 'line',
-      backgroundColor: '#337bb8'
-  },
-  title: {
-      text: 'Monthly Average Temperature'
-  },
-  subtitle: {
-      text: 'Source: WorldClimate.com'
-  },
-  xAxis: {
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  },
-  yAxis: {
-      title: {
-          text: 'Temperature (°C)'
-      }
-  },
-  plotOptions: {
-      line: {
-          dataLabels: {
-              enabled: true
+$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
+
+    Highcharts.chart('timechart', {
+        chart: {
+            zoomType: 'x',
+            backgroundColor: '#337bb8',
+            style: {
+                color: 'white',
+                font: 'Montserrat'
+            }
+        },
+        credits: {
+          enabled: false
+        },
+        title: {
+          style: {
+              color: 'white',
+              font: 'Montserrat'
           },
-          enableMouseTracking: true
-      }
-  },
-  series: [{
-      name: 'Tokyo',
-      data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-  }]
+          text: 'Topic popularity over time'
+        },
+        xAxis: {
+            type: 'datetime',
+            style: {
+                color: 'white',
+                font: 'Montserrat'
+            },
+            labels: {
+              style: {
+                  color: 'white',
+                  font: 'Montserrat'
+              }
+            }
+        },
+        yAxis: {
+          style: {
+              color: 'white',
+              font: 'Montserrat'
+          },
+          title: {
+            style: {
+                color: 'white',
+                font: 'Montserrat'
+            },
+            text: '# of tweets'
+          },
+          labels: {
+            style: {
+                color: 'white',
+                font: 'Montserrat'
+            }
+          }
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            area: {
+                fillColor: {
+                    linearGradient: {
+                        x1: 0,
+                        y1: 0,
+                        x2: 0,
+                        y2: 1
+                    },
+                    stops: [
+                        [0, Highcharts.getOptions().colors[0]],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[3]).setOpacity(0).get('rgba')]
+                    ]
+                },
+                marker: {
+                    radius: 2
+                },
+                lineWidth: 2,
+                states: {
+                    hover: {
+                        lineWidth: 2
+                    }
+                },
+                style: {
+                    color: 'white',
+                    font: 'Montserrat'
+                },
+                threshold: null
+            }
+        },
+
+        series: [{
+            type: 'area',
+            name: 'Tweet Amount',
+            data: data
+        }]
+    });
 });
