@@ -1,6 +1,5 @@
-$.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.json&callback=?', function (data) {
 
-    Highcharts.chart('timechart', {
+  Highcharts.chart('timechart', {
         chart: {
             zoomType: 'x',
             backgroundColor: '#337bb8',
@@ -91,4 +90,3 @@ $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=usdeur.jso
             data: data
         }]
     });
-});

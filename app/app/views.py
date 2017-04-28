@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, url_for, redirect
-from app import app, example 
+from app import app, example
 from app.classes import Query
+from app.topic_model import topics_lib
 
 @app.route('/', methods=['GET'])
 def index():
@@ -17,12 +18,19 @@ def search():
     if request.method == 'POST':
         uquery = Query()
         uquery.query = request.form['search']
+
         if uquery.query:
+            # Get the topic number and relevant snopes link
+            topic_num, uquery.topic = topics_lib.best_topic(uquery.query)
+
+            uquery.set_cquery(topic_num)
             # Get generators from cassandra for visualizations
             # get_data(uquery)
             return render_template('adindex.html', uquery=uquery)
+
         else:
             return redirect('/')
+
     else:
         return redirect('/')
 
@@ -39,17 +47,12 @@ def get_data(uquery):
     : param uquery: class containing the user query and variables
         to store generators for cassandra data
     """
-    
+
     session = sbweb_db.connect('swashbucklers')
-    
+
     # Figure out what query to make
     map_query = "SELECT * FROM tweets_master"
     timechart_query = "SELECT * FROM tweets_master"
 
     uquery.map_data = sbweb_db.execute(map_query)
     uquery.timechart_data = sbweb_db.execute('select * from tweets_master limit 10;')
-
-    
-
-
-
