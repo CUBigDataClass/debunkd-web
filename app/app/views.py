@@ -37,7 +37,7 @@ def get_data(uquery):
     """
     Given a user query, get relevant data from cassandra DB
     : param uquery: class containing the user query and variables
-                    to store generators for cassandra data
+        to store generators for cassandra data
     """
     
     session = sbweb_db.connect('swashbucklers')
