@@ -5,10 +5,10 @@ class Topic_model:
 
     def __init__(self):
         self.topics = [ \
-            Counter('is being single a disability'.split(' ')), \
+            Counter('being single disability'.split(' ')), \
             Counter('emails released by wikileaks confirm hillary clinton sold weapons to isis'.split(' ')), \
             Counter('chemotherapy doctor blows whistle doesnt work'.split(' ')), \
-            Counter('el chapo put a 100 millon bounty on donald trump'.split(' '))]
+            Counter('el chapo put a 100 millon bounty donald trump'.split(' '))]
         self.links = ['http://www.snopes.com/being-single-is-a-disability/', \
             'http://www.snopes.com/wikileaks-cofirms-hillary-clinton-sold-weapons-to-isis/', \
             'http://www.snopes.com/chemotherapy-doctor-blows-the-whistle/', \

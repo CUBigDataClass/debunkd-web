@@ -79,6 +79,12 @@
               {% endfor %}
             ];
 
+            data = [
+              [Date.UTC(2013,5,2),getRandomInt(0, 20)],
+              [Date.UTC(2013,5,3),getRandomInt(0, 20)],
+              [Date.UTC(2013,5,4),getRandomInt(0, 20)]
+            ];
+
           </script>
 
         <div id="exTab1">
@@ -104,13 +110,13 @@
 
                 <!-- Timechart -->
                 <div id="timechart" align="center"></div>
-                <script src="./static/us_timechart.js?123"> </script>
+                <script src="./static/us_timechart.js?125"> </script>
 
       				</div>
       			</div>
 
             <!-- Tweet Table -->
-            <h2>Tweets related to: <a href="#"><u>{{uquery.query}}</u></a></h2>
+            <h2><a href="{{uquery.topic}}"><u>{{uquery.topic}}</u></a></h2>
             <p>List of all tweets relating to search topic</p>
             <table id="mytable" class="table table-borderless container">
               <thead>
