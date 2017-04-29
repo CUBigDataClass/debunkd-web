@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from app import app, example
+from app import app
 from app.classes import Query
 from app.topic_model import topics_lib
 

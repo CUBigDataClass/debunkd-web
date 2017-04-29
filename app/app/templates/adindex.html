@@ -80,9 +80,9 @@
             ];
 
             data = [
-              [Date.UTC(2013,5,2),getRandomInt(0, 20)],
-              [Date.UTC(2013,5,3),getRandomInt(0, 20)],
-              [Date.UTC(2013,5,4),getRandomInt(0, 20)]
+              {% for i in range(25) %}
+              [Date.UTC(2013,5,{{i}}),getRandomInt({{i}}, 20)],
+              {% endfor %}
             ];
 
           </script>
@@ -116,7 +116,7 @@
       			</div>
 
             <!-- Tweet Table -->
-            <h2><a href="{{uquery.topic}}"><u>{{uquery.topic}}</u></a></h2>
+            <h3><a href="{{uquery.topic}}"><u>{{uquery.topic}}</u></a></h3>
             <p>List of all tweets relating to search topic</p>
             <table id="mytable" class="table table-borderless container">
               <thead>
