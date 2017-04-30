@@ -4,7 +4,6 @@ from app.classes import Query
 from app.topic_model import topics_lib
 
 prefork_driver = True
-
 try:
     from app import cassandra_driver
 except:
@@ -31,7 +30,6 @@ def search():
             # Get the topic number and relevant snopes link
             uquery.topic = topics_lib.best_topic(uquery.query)
 
-            # uquery.set_cquery(topic_num)
             # Get generators from cassandra for visualizations
             get_data(uquery)
             return render_template('adindex.html', uquery=uquery)
@@ -60,7 +58,7 @@ def get_data(uquery):
     map_query = "SELECT location, count FROM state_aggregates WHERE topic = '{}'".format(uquery.topic[0])
     tc_query = "SELECT posted_time, count FROM date_aggregates WHERE topic = '{}'".format(uquery.topic[0])
 
-    tweet_query = "SELECT posted_time, body FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
+    tweet_query = "SELECT posted_time, body, original_status_url FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
 
     if prefork_driver:
         conn = cassandra_driver.conn

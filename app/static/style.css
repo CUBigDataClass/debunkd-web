@@ -42,9 +42,9 @@ h2,h3 > a {
 }
 
 /* Hover for clickable elements in table */
-td > a:hover {
+/*td > a:hover {
   color: red;
-}
+}*/
 
 tr:nth-child(even) {
     background-color: #2b6ba2;
