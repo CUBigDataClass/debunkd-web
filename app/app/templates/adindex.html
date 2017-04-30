@@ -74,14 +74,14 @@
             }
 
             var map_data = [
-              {% for state in uquery.states %}
-              ['us-{{state}}', getRandomInt(0, 5000)],
+              {% for row in uquery.map_data %}
+              ['us-{{row.location.lower()}}', {{row.count}}],
               {% endfor %}
             ];
 
             data = [
-              {% for i in range(25) %}
-              [Date.UTC(2013,5,{{i}}),getRandomInt({{i}}, 20)],
+              {% for row in uquery.timechart_data %}
+              [Date.UTC({{row.posted_time | string | replace("-",",")}}), {{row.count}}],
               {% endfor %}
             ];
 
@@ -110,28 +110,28 @@
 
                 <!-- Timechart -->
                 <div id="timechart" align="center"></div>
-                <script src="./static/us_timechart.js?125"> </script>
+                <script src="./static/us_timechart.js?127"> </script>
 
       				</div>
       			</div>
 
             <!-- Tweet Table -->
-            <h3><a href="{{uquery.topic}}"><u>{{uquery.topic}}</u></a></h3>
+            <h3><a href="{{uquery.topic}}"><u>{{uquery.topic[1]}}</u></a></h3>
             <p>List of all tweets relating to search topic</p>
             <table id="mytable" class="table table-borderless container">
               <thead>
                 <tr>
-                  <th>Tweet</th>
-                  <th>Retweets</th>
                   <th>Date</th>
+                  <th>Link</th>
+                  <th>Tweet</th>
                 </tr>
               </thead>
               <tbody>
-                {% for word in uquery.query.split(' ') %}
+                {% for tweet in uquery.tweet_data %}
                 <tr>
-                  <td>{{word}}</td>
+                  <td>{{tweet.posted_time}}</td>
                   <td>10000</td>
-                  <td>{{(word + ' ' + word + ' ')*10}}</td>
+                  <td>{{tweet.body}}</td>
                 </tr>
                 {% endfor %}
               </tbody>
@@ -145,7 +145,7 @@
             $(window).resize();
             $('#mytable').DataTable( {
                 searching: false,
-                scrollY: "200px",
+                scrollY: "520px",
                 aaSorting: []
                 // scrollCollapse: true
             });

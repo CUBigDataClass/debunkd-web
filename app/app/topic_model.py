@@ -40,7 +40,7 @@ class Topic_model:
             topic_score[topic[0]] = score
 
         top_index = max(topic_score.items(), key=operator.itemgetter(1))[0]
-        return top_index, self.links[top_index]
+        return top_index+1, self.links[top_index]
 
 
 topics_lib = Topic_model()

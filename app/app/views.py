@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, url_for, redirect
-from app import app
+from app import app, sbdb
 from app.classes import Query
 from app.topic_model import topics_lib
 
@@ -21,11 +21,11 @@ def search():
 
         if uquery.query:
             # Get the topic number and relevant snopes link
-            topic_num, uquery.topic = topics_lib.best_topic(uquery.query)
+            uquery.topic = topics_lib.best_topic(uquery.query)
 
-            uquery.set_cquery(topic_num)
+            # uquery.set_cquery(topic_num)
             # Get generators from cassandra for visualizations
-            # get_data(uquery)
+            get_data(uquery)
             return render_template('adindex.html', uquery=uquery)
 
         else:
@@ -48,11 +48,12 @@ def get_data(uquery):
         to store generators for cassandra data
     """
 
-    session = sbweb_db.connect('swashbucklers')
+    # Construct cassandra queries
+    map_query = "SELECT location, count FROM state_aggregates WHERE topic = '{}'".format(uquery.topic[0])
+    tc_query = "SELECT posted_time, count FROM date_aggregates WHERE topic = '{}'".format(uquery.topic[0])
 
-    # Figure out what query to make
-    map_query = "SELECT * FROM tweets_master"
-    timechart_query = "SELECT * FROM tweets_master"
+    tweet_query = "SELECT posted_time, body FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
 
-    uquery.map_data = sbweb_db.execute(map_query)
-    uquery.timechart_data = sbweb_db.execute('select * from tweets_master limit 10;')
+    uquery.map_data = sbdb.execute(map_query)
+    uquery.timechart_data = sbdb.execute(tc_query)
+    uquery.tweet_data = sbdb.execute(tweet_query)
