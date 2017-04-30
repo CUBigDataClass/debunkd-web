@@ -7,7 +7,7 @@ prefork_driver = True
 
 try:
     from app import cassandra_driver
-except ImportError:
+except:
     from app import sbdb
     prefork_driver = False
 
