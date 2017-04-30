@@ -32,6 +32,7 @@
             }
         },
         yAxis: {
+          min: 0,
           style: {
               color: 'white',
               font: 'Montserrat'
@@ -70,10 +71,10 @@
                 marker: {
                     radius: 2
                 },
-                lineWidth: 2,
+                lineWidth: 3,
                 states: {
                     hover: {
-                        lineWidth: 2
+                        lineWidth: 3
                     }
                 },
                 style: {

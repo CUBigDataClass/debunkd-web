@@ -13,6 +13,7 @@ class Query():
         self.states = dict.fromkeys([ 'ma', 'wa', 'ca', 'or', 'wi', 'me', 'mi', 'nv', 'nm', 'co', 'wy', 'co', 'wy', 'ks', 'ne', 'ok', 'mo', 'il', 'in', 'vt', 'ar', 'tx', 'ri', 'al', 'ms', 'nc', 'va', 'ia', 'md', 'de', 'pa', 'nj', 'ny', 'id', 'sd', 'ct', 'nh', 'ky', 'oh', 'tn', 'wv', 'dc', 'la', 'fl', 'ga', 'sc', 'mn', 'mt', 'nd', 'az', 'ut', 'hi', 'ak' ])
         self.map_data = None
         self.timechart_data = None
+        self.tweet_data = None
 
     def set_cquery(self, topic_num):
         """
