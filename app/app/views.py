@@ -2,7 +2,14 @@ from flask import Flask, request, render_template, url_for, redirect
 from app import app
 from app.classes import Query
 from app.topic_model import topics_lib
-from app import cassandra_driver
+
+prefork_driver = True
+
+try:
+    from app import cassandra_driver
+except ImportError:
+    from app import sbdb
+    prefork_driver = False
 
 @app.route('/', methods=['GET'])
 def index():
@@ -55,6 +62,11 @@ def get_data(uquery):
 
     tweet_query = "SELECT posted_time, body FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
 
-    uquery.map_data = cassandra_driver.conn.execute(map_query)
-    uquery.timechart_data = cassandra_driver.conn.execute(tc_query)
-    uquery.tweet_data = cassandra_driver.conn.execute(tweet_query)
+    if prefork_driver:
+        conn = cassandra_driver.conn
+    else:
+        conn = sbdb
+
+    uquery.map_data = conn.execute(map_query)
+    uquery.timechart_data = conn.execute(tc_query)
+    uquery.tweet_data = conn.execute(tweet_query)
