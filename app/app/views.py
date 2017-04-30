@@ -58,7 +58,7 @@ def get_data(uquery):
     map_query = "SELECT location, count FROM state_aggregates WHERE topic = '{}'".format(uquery.topic[0])
     tc_query = "SELECT posted_time, count FROM date_aggregates WHERE topic = '{}'".format(uquery.topic[0])
 
-    tweet_query = "SELECT posted_time, body, original_status_url FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
+    tweet_query = "SELECT posted_time, body, tweet_id, retweet_count FROM top_retweets WHERE topic = '{}'".format(uquery.topic[0])
 
     if prefork_driver:
         conn = cassandra_driver.conn
