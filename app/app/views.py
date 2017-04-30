@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, url_for, redirect
-from app import app, sbdb
+from app import app
 from app.classes import Query
 from app.topic_model import topics_lib
+from app import cassandra_driver
 
 @app.route('/', methods=['GET'])
 def index():
@@ -54,6 +55,6 @@ def get_data(uquery):
 
     tweet_query = "SELECT posted_time, body FROM tweets_master WHERE topic = '{}' LIMIT 500 ALLOW FILTERING".format(uquery.topic[0])
 
-    uquery.map_data = sbdb.execute(map_query)
-    uquery.timechart_data = sbdb.execute(tc_query)
-    uquery.tweet_data = sbdb.execute(tweet_query)
+    uquery.map_data = cassandra_driver.conn.execute(map_query)
+    uquery.timechart_data = cassandra_driver.conn.execute(tc_query)
+    uquery.tweet_data = cassandra_driver.conn.execute(tweet_query)
