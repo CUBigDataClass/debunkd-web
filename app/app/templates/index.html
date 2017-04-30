@@ -50,12 +50,12 @@
       <img src="{{url_for('static', filename='sb_logo2.png')}}" class="main-logo" align="center">
 
       <div class="container search-note" align="center">
-        <p id="desc"><i>Debunkd is a tool designed to help you identify tweets associated with false news topics and visualize it's spread and influence</i></p>
+        <p id="desc"><i>Debunkd is a tool designed to help you identify tweets associated with false news topics and visualize their spread and influence</i></p>
       </div>
 
       <!-- Search box -->
       <div class="search-form">
-        <form align="center" action="{{ url_for('search') }}" method="Post">
+        <form align="center" action="{{ url_for('search') }}" method="post">
           <input type="text" name="search" id="search" placeholder="Debunk topic...">
           <br /> <br />
           <input type="submit" class="btn btn-primary btn-large" name="searchbutt" id="searchbutt" value="Search Fake News">
