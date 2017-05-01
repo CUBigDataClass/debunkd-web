@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t sb-web:latest .
+docker tag sb-web:latest hexacyanide/sb-web
+docker push docker.io/hexacyanide/sb-web:latest
